@@ -1,0 +1,27 @@
+vm host1 {
+        os : WINDOWS
+        ver : "7"
+        src : "/srv/VMLibrary/win7"
+        eth0 : "192.168.10.3"
+}
+
+vm host2 {
+        os : WINDOWS
+        ver : "7"
+        src : "/srv/VMLibrary/win7"
+        eth0 : "192.168.10.2"
+}
+
+
+hub hub1 {
+        inf : host1.eth0, host2.eth0
+        subnet : "192.168.10.0"
+        netmask : "255.255.255.0"
+}
+
+
+partial_solution {
+(host1.eth0 v3.vinf20),
+(host2.eth0 v3.vinf20)
+}
+
